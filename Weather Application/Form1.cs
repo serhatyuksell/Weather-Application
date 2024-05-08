@@ -17,7 +17,7 @@ namespace Weather_Application
         {
             if (textbox.Text == "")
             {
-                MessageBox.Show("Lütfen þehiri giriniz...", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("L?tfen ?ehiri giriniz...", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -39,11 +39,69 @@ namespace Weather_Application
                     temp_label.Location = new Point(form.Size.Width / 2 - temp_label.Size.Width / 2 - 10, 192);
                     dynamic picture = stuff.weather[0].icon;
 
-                    string iconCode = "01d";
-                    picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
-                    dynamic status = stuff.weather[0].description;
-                    weather_case_label.Text = status;
-                    weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
+                    dynamic status;
+                    status = stuff.weather[0].description;
+                    if (status == "açýk")
+                    {
+                        string iconCode = "01d";
+                        picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
+                        weather_case_label.Text = status;
+                        weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
+                    }
+                    else if (status.ToString().Contains("bulut")) 
+                    {
+                        string iconCode = "02d";
+                        picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
+                        weather_case_label.Text = status;
+                        weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
+                    }
+                    else if (status.ToString().Contains("kapalý"))
+                    {
+                        string iconCode = "04d";
+                        picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
+                        weather_case_label.Text = status;
+                        weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
+                    }
+
+                    else if (status.ToString().Contains("yaðmur"))
+                    {
+                        string iconCode = "09d";
+                        picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
+                        weather_case_label.Text = status;
+                        weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
+                    }
+                    
+                    else if (status == "dolu")
+                    {
+                        string iconCode = "10d"; // Alternatif bir kod kullanýlabilir
+                        picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
+                        weather_case_label.Text = status;
+                        weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
+                    }
+                    
+                    else if (status.ToString().Contains("fýrtýna"))
+                    {
+                        string iconCode = "11d";
+                        picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
+                        weather_case_label.Text = status;
+                        weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
+                    }
+                   
+                    else if (status.ToString().Contains("yaðýþ"))
+                    {
+                        string iconCode = "09d"; // Alternatif bir kod kullanýlabilir
+                        picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
+                        weather_case_label.Text = status;
+                        weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
+                    }
+                    else if (status.ToString().Contains("kar"))
+                    {
+                        string iconCode = "13d"; // Alternatif bir kod kullanýlabilir
+                        picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
+                        weather_case_label.Text = status;
+                        weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
+                    }
+                    
                     dynamic country = stuff.sys.country;
                     dynamic name = stuff.name;
                     city_label.Text = $"{name}, {country}";
@@ -56,9 +114,7 @@ namespace Weather_Application
                 }
             }
         }
-
-
-
+   
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
