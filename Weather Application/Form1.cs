@@ -15,6 +15,8 @@ namespace Weather_Application
         }
         public void islem1()
         {
+            picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
+
             if (textbox.Text == "")
             {
                 MessageBox.Show("L?tfen ?ehiri giriniz...", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -44,6 +46,7 @@ namespace Weather_Application
                     if (status == "açýk")
                     {
                         string iconCode = "01d";
+                        picturebox.BackColor=Color.LightSkyBlue;
                         picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
                         weather_case_label.Text = status;
                         weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
@@ -51,6 +54,7 @@ namespace Weather_Application
                     else if (status.ToString().Contains("bulut")) 
                     {
                         string iconCode = "02d";
+                        picturebox.BackColor = Color.LightSkyBlue;
                         picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
                         weather_case_label.Text = status;
                         weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
@@ -58,6 +62,7 @@ namespace Weather_Application
                     else if (status.ToString().Contains("kapalý"))
                     {
                         string iconCode = "04d";
+                        picturebox.BackColor = Color.LightSkyBlue;
                         picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
                         weather_case_label.Text = status;
                         weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
@@ -66,6 +71,7 @@ namespace Weather_Application
                     else if (status.ToString().Contains("yaðmur"))
                     {
                         string iconCode = "09d";
+                        picturebox.BackColor = Color.LightSkyBlue;
                         picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
                         weather_case_label.Text = status;
                         weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
@@ -74,6 +80,7 @@ namespace Weather_Application
                     else if (status == "dolu")
                     {
                         string iconCode = "10d"; // Alternatif bir kod kullanýlabilir
+                        picturebox.BackColor = Color.LightSkyBlue;
                         picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
                         weather_case_label.Text = status;
                         weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
@@ -82,6 +89,7 @@ namespace Weather_Application
                     else if (status.ToString().Contains("fýrtýna"))
                     {
                         string iconCode = "11d";
+                        picturebox.BackColor = Color.LightSkyBlue;
                         picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
                         weather_case_label.Text = status;
                         weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
@@ -90,6 +98,7 @@ namespace Weather_Application
                     else if (status.ToString().Contains("yaðýþ"))
                     {
                         string iconCode = "09d"; // Alternatif bir kod kullanýlabilir
+                        picturebox.BackColor = Color.LightSkyBlue;
                         picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
                         weather_case_label.Text = status;
                         weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);
@@ -97,6 +106,7 @@ namespace Weather_Application
                     else if (status.ToString().Contains("kar"))
                     {
                         string iconCode = "13d"; // Alternatif bir kod kullanýlabilir
+                        picturebox.BackColor = Color.LightSkyBlue;
                         picturebox.Load($"https://openweathermap.org/img/w/{iconCode}.png");
                         weather_case_label.Text = status;
                         weather_case_label.Location = new Point(form.Size.Width / 2 - weather_case_label.Size.Width / 2 - 10, 259);

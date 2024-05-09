@@ -34,12 +34,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             textbox = new Guna.UI2.WinForms.Guna2TextBox();
             temp_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             city_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            picturebox = new Guna.UI2.WinForms.Guna2PictureBox();
             weather_case_label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            picturebox = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)picturebox).BeginInit();
             SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             textbox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             textbox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             textbox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            textbox.FillColor = Color.Cyan;
             textbox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             textbox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             textbox.ForeColor = Color.Black;
@@ -61,7 +63,7 @@
             textbox.Name = "textbox";
             textbox.PasswordChar = '\0';
             textbox.PlaceholderForeColor = SystemColors.ControlDarkDark;
-            textbox.PlaceholderText = "";
+            textbox.PlaceholderText = "please enter the city";
             textbox.SelectedText = "";
             textbox.ShadowDecoration.CustomizableEdges = customizableEdges2;
             textbox.Size = new Size(306, 84);
@@ -90,19 +92,6 @@
             city_label.TabIndex = 2;
             city_label.Text = "İstanbul, TR";
             // 
-            // picturebox
-            // 
-            picturebox.CustomizableEdges = customizableEdges3;
-            picturebox.FillColor = SystemColors.Control;
-            picturebox.ImageRotate = 0F;
-            picturebox.Location = new Point(114, 323);
-            picturebox.Name = "picturebox";
-            picturebox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            picturebox.Size = new Size(92, 88);
-            picturebox.TabIndex = 3;
-            picturebox.TabStop = false;
-            picturebox.Click += picturebox_Click;
-            // 
             // weather_case_label
             // 
             weather_case_label.BackColor = Color.Transparent;
@@ -117,26 +106,45 @@
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges5;
+            guna2Button1.BackColor = SystemColors.ControlText;
+            guna2Button1.BorderColor = Color.LightGray;
+            guna2Button1.CustomizableEdges = customizableEdges3;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.White;
+            guna2Button1.FillColor = Color.Aqua;
             guna2Button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            guna2Button1.ForeColor = Color.Black;
+            guna2Button1.ForeColor = Color.Red;
             guna2Button1.Location = new Point(54, 108);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button1.Size = new Size(225, 56);
             guna2Button1.TabIndex = 5;
             guna2Button1.Text = "Arama";
             guna2Button1.Click += guna2Button1_Click;
             // 
+            // picturebox
+            // 
+            picturebox.BackColor = SystemColors.Control;
+            picturebox.BackgroundImageLayout = ImageLayout.Stretch;
+            picturebox.CustomizableEdges = customizableEdges5;
+            picturebox.FillColor = Color.LightSkyBlue;
+            picturebox.ImageRotate = 0F;
+            picturebox.Location = new Point(114, 323);
+            picturebox.Name = "picturebox";
+            picturebox.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            picturebox.Size = new Size(92, 88);
+            picturebox.TabIndex = 3;
+            picturebox.TabStop = false;
+            picturebox.Click += picturebox_Click;
+            // 
             // Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(332, 498);
             Controls.Add(guna2Button1);
             Controls.Add(weather_case_label);
@@ -158,8 +166,8 @@
         private Guna.UI2.WinForms.Guna2TextBox textbox;
         private Guna.UI2.WinForms.Guna2HtmlLabel temp_label;
         private Guna.UI2.WinForms.Guna2HtmlLabel city_label;
-        private Guna.UI2.WinForms.Guna2PictureBox picturebox;
         private Guna.UI2.WinForms.Guna2HtmlLabel weather_case_label;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2PictureBox picturebox;
     }
 }
